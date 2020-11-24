@@ -1,0 +1,65 @@
+﻿<Window x:Class="RESTclient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RESTclient"
+        mc:Ignorable="d"
+        Title="PersonData" Height="670" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label FontSize="15" FontWeight="Bold">Dane Personalne:</Label>
+            <Label>Imie:</Label>
+            <TextBox x:Name="tName" />
+            <Label>Nazwisko:</Label>
+            <TextBox x:Name="tSurname"/>
+            <Label>Miasto:</Label>
+            <TextBox x:Name="tCity" />
+            <Label>Rok:</Label>
+            <TextBox x:Name="tYear"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label FontSize="15" FontWeight="Bold">Dane Zwierzaka:</Label>
+            <Label>Rasa:</Label>
+            <TextBox x:Name="tAnimal" />
+            <Label>Imie zwierzaka:</Label>
+            <TextBox x:Name="tAnimalName"/>
+            <Label>Rok:</Label>
+            <TextBox x:Name="tAnimalYear"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Label FontSize="15" FontWeight="Bold">Dane Samochodu:</Label>
+            <Label>Marka:</Label>
+            <TextBox x:Name="tBrand" />
+            <Label>Kolor:</Label>
+            <TextBox x:Name="tColor"/>
+            <Label>Rok:</Label>
+            <TextBox x:Name="tCarYer"/>
+            <Label>Przebieg:</Label>
+            <TextBox x:Name="tMileage"/>
+        </StackPanel>
+
+        <Button Margin="5" x:Name="bAdd" Grid.Row="4" HorizontalAlignment="Right" Width="80" Click="bAdd_Click">Add</Button>
+        <Button Margin="5" x:Name="bEdit" Grid.Row="4" HorizontalAlignment="Left" Width="80" Click="bEdit_Click">Edit</Button>
+        <Button Margin="5" x:Name="bDelet" Grid.Row="4"  HorizontalAlignment="Center" Width="80" Click="bDelet_Click">Delete</Button>
+        <Button Margin="5" x:Name="bGetOne" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Width="100" Click="bGetOne_Click" >GetSelectedOne</Button>
+        <Button Margin="5,0,0,5" x:Name="bGetAll" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Left" Width="80" Click="bGetAll_Click" Height="40" VerticalAlignment="Bottom">GetAll</Button>
+        <ListBox x:Name="personsList" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+        </ListBox>
+
+        <TextBox x:Name="tMessage" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+    </Grid>
+</Window>
